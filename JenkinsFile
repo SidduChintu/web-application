@@ -1,15 +1,15 @@
 pipelines {
-  agent any
+    agent any
     stages{
-        stage ('Git Cloning'){
+        stage ('git cloning'){
             step{
                 git branch: 'main', url: 'https://github.com/SidduChintu/web-application.git'
             }
-         stage ('Build'){
-           step{
-               build 'pipeline'
-           }
-         }
+        }
+        stage ('git cloning'){
+            step{
+                build 'pipeline'
+            }
         }
     }
 }
