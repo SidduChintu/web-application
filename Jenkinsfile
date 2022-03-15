@@ -1,4 +1,4 @@
-pipelines {
+pipeline {
     agent any
     tools {
         maven 'Maven'
@@ -17,14 +17,19 @@ pipelines {
                 '''
             }
         }
-        stage ('git cloning'){
-            step{
-                git branch: 'main', url: 'https://github.com/SidduChintu/web-application.git'
-            }
-        }
-        stage ('git cloning'){
-            step{
-                build 'pipeline'
+        // stage ('git cloning'){
+        //     step{
+        //         git branch: 'main', url: 'https://github.com/SidduChintu/web-application.git'
+        //     }
+        // }
+        // stage ('build'){
+        //     step{
+        //         build 'pipeline'
+        //     }
+        // }
+        stage ('Build app') {
+            steps{
+                sh 'mvn clean install package'
             }
         }
     }
