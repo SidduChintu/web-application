@@ -6,7 +6,7 @@ pipelines {
                 git branch: 'main', url: 'https://github.com/SidduChintu/web-application.git'
             }
         }
-        stage ('git cloning'){
+        stage ('build'){
             step{
                 build 'pipeline'
             }
